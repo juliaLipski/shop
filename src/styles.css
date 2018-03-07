@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Griffy|Yanone+Kaffeesatz:400,700');
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "~bootstrap/dist/css/bootstrap.min.css";
+:root {
+    --main-a-active-color: rgba(112, 108, 72, 0.918);
+    --main-bg-url: url("https://www.pinkcitykirana.com/image/cache/catalog/final%20banner%20pinkcity%20kirana-1920x800.png");
+}
+html, body{
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0%;
+}
+h2{
+    font-size: 3rem;
+    font-weight:bold;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}

@@ -1,0 +1,35 @@
+<div #target>
+  <div class="logowrapper">
+    <div class="d-flex justify-content-between">
+      <nav class="mNav navbar-right justify-content-between ">
+        <a class="myA" routerLink='/home' routerLinkActive="router-link-active">
+          <i class="fa fa-home fa-fw" aria-hidden="true"></i>Home</a>
+        <a class="myA">About Us</a>
+        <a class="myA">Contact Us</a>
+      </nav>
+      <div class="cardLinkWrapp">
+        <a class="cardLink" routerLink='/myCart' routerLinkActive="router-link-active">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i> MyCart </a>
+        <span>({{len}} items)</span>
+      </div>
+    </div>
+  </div>
+  <div class="logowrapperSmall">
+    <mat-menu class="menuSmall" #appMenu="matMenu">
+      <a mat-menu-item class="colorBg" routerLink='/home' routerLinkActive="router-link-active">
+        <i class="fa fa-home fa-fw" aria-hidden="true"></i>Home</a>
+      <a mat-menu-item class="colorBg text-center" routerLink='/about' routerLinkActive="router-link-active">About Us</a>
+      <a mat-menu-item class="colorBg text-center" routerLink='/myCart' routerLinkActive="router-link-active">My Cart</a>
+      <a mat-menu-item class="colorBg text-center" routerLink='/contacts' routerLinkActive="router-link-active">Contact Us</a>
+    </mat-menu>
+    <div class="iconMenu" mat-icon-button [matMenuTriggerFor]="appMenu">
+      <mat-icon>format_align_justify</mat-icon>
+    </div>
+  </div>
+</div>
+<router-outlet (messageEvent)="receiveMessage($event)"></router-outlet>
+
+<app-footer class="footer"></app-footer>
+<div class="up  d-flex justify-content-center align-items-center" [ngClass]="{hidden: hidden}">
+  <i (click)="scroll(target)" class="fa fa-chevron-up cool upContent text-center" matTooltip="up" mat-button></i>
+</div>

@@ -1,0 +1,12 @@
+DROP DATABASE IF EXISTS shop;
+CREATE DATABASE shop;
+
+\c shop;
+
+CREATE TABLE cart (
+  ID SERIAL PRIMARY KEY,
+  title VARCHAR,
+  img VARCHAR,
+  price INTEGER,
+  quan INTEGER
+);

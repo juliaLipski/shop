@@ -1,0 +1,46 @@
+<div class="wrapp">
+    <mat-card>
+        <mat-grid-list  cols="{{numP}}" rowHeight="430px" gutterSize="5px" (window:resize)="onResize()">
+            <mat-grid-tile *ngFor="let item of ourProducts | paginate: { itemsPerPage: 6, currentPage: p }">
+                <div class="mdd">
+                    <mat-card [style.height]="'400px'">
+                        <img [style.height]="'40%'" md-card-image src="{{item.img}}">
+                        <mat-card-content>
+                            <p>Price:
+                                <span>{{item.price}}</span> $
+                            </p>
+                            <div>{{item.title}}</div>
+                        </mat-card-content>
+                        <button mat-raised-button color="primary" (click)="getItem(item)">
+                            <mat-icon color="accent">favorite</mat-icon> add to Cart</button>
+                    </mat-card>
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </mat-card>
+    <!--  -->
+    <alert [(visible)]="showDialog" class="text-center">
+            <mat-card [style.height]="'250px'">
+                <mat-card-content>
+                    <mat-form-field>
+                        <mat-select placeholder="how many items to add?" [(value)]="selected">
+                            <mat-option *ngFor="let num of numbers" [value]="num">
+                                {{num}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-card-content>
+                <div>
+                <button mat-button color="primary" (click)="addItem()">Add to cart</button>
+                </div>
+            </mat-card>
+    </alert>
+    <alert [(visible)]="showDialogMess" class="text-center">
+        <mat-card>
+            <div class="mesAlert text-center">
+                {{mess}}
+            </div>
+        </mat-card>
+</alert>
+</div>

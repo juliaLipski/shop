@@ -1,0 +1,19 @@
+.wrapp{
+    padding: 10px;
+}
+.mdd{
+    padding: 10px;
+    margin: 5px;
+}
+.mat-raised-button{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+.mesAlert{
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    padding: 30px;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: antiquewhite;
+}
